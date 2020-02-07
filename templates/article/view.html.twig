@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{article.titre}}{% endblock %}
+
+{% block body %}
+{#
+
+{% if article.image %}
+  <img src="{{asset('uploads/images/' ~ article.image)}}" alt="user upload image ">
+{% endif %}
+#}
+
+  <div class="container">
+    <h1> {{article.titre}}</h1>
+        <h3>
+            Posté le 
+            {{article.date | date("d/m/Y h:i")}}
+        </h3>
+        <h4> par Hugo Gaspard</4>
+    
+        <p> {{article.contenu}}</p>
+
+  </div>
+
+{% endblock %}

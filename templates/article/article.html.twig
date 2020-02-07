@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue sur la pages de nos articles{% endblock %}
+
+{% block body %}
+
+{%  for article in articles %}
+
+    <h1>
+        <a href="{{path('article_view', {'id': article.id}) }}">        
+            {{article.titre | upper}}
+        </a>
+    </h1>
+    <h3>
+        {{article.date | date("d/m/Y h:i")}}
+    </h3>
+    
+
+    <p>
+        {{ article.contenu}}
+    </p>
+
+ {%  endfor %}
+
+{% endblock %}

@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title><link rel="shortcut icon" href="https://www.hugogaspard.com/wp-content/uploads/2019/10/HG.jpg" />
+        {% block stylesheets %}
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="uploads/css/footer.css">
+        {% endblock %}
+    </head>
+    <body>
+      
+        <header>
+            <div class="pos-f-t">
+                <div class="collapse" id="navbarToggleExternalContent">
+                  <div class="row justify-content-between bg-dark p-4" style="display: flex;">      
+                    <div class="col-4 ">
+                        <h5 class="text-white h4">Qui sommes nous ?</h5>
+                        <span class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam cumque quod iste asperiores nihil quisquam officia ex quibusdam ipsam dolores similique praesentium facere sit accusantium molestiae, perferendis quis aspernatur. Nostrum!Harum et, delectus quod a repellendus </span>   
+                    </div>             
+                    <div class="col-2 py-4">
+                        <h4 class="text-white">Suivez-nous ! </h4>
+                        <ul class="list-unstyled row justify-content-around">
+                            <li><a href="https://www.facebook.com/hugogaspardpro/" class="text-white"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/hugogaspard" class="text-white"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/hugogaspardpro/" class="text-white"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <nav class="navbar navbar-dark bg-dark">
+                    <div class="container d-flex justify-content-between">               
+                        <a href="/" class="navbar-brand d-flex align-items-center">
+                            <svg xmlns="https://www.hugogaspard.com/wp-content/uploads/2019/10/HG.jpg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="13" r="4"/></svg>
+                            <strong>ALAPAPA</strong>
+                        </a>  
+
+                    </div>
+                    <ul class="container nav justify-content-end">
+                        <li class="nav-item">
+                          <a class="nav-link active" href="direction_artistique">| Direction artistique |</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="direction_projet">| Direction projet |</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{path('article')}}">| Nos articles |</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link " href="{{path('app_login')}}" tabindex="-1" >| Se connecter |</a>
+                        </li>
+                      </ul>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"                    aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                </nav>               
+            </div>        
+        </header> 
+   
+        
+        <div class="container">
+            {% block body %}
+            {% endblock %}
+        </div>
+            
+        <footer>       
+            <div class="footer">
+                <div id="button">
+                </div>
+                <div id="container">
+                    <section id="cont">
+                        <div class="footer_center">
+
+                            <p>The sky's the limit </p>
+                        </div>                      
+                    </section>
+                    <section>
+                        <p class="h3"><br/> Conseil, Création et Accompagnement.</p>
+                        <div class="content">
+                            <div class="border-top-bottom">
+                                <article class="f-left col-2-1">
+                                    <a href="https://www.alapapa.fr">
+                                        <img class="f-left" src="" alt="HugoGaspard" width="139" height="100"/>
+                                    </a>
+                                    <p>
+                                        <span>Vous avez un projet ?</span>
+                                        <br/>
+                                        <em>
+                                            <span>01 48 75 59 59</span> ou <a href="{{path('message_new')}}"><span>nous contacter</span></a>
+                                        </em>
+                                    </p>
+                                </article>
+                                
+                            </div>
+                        </div>
+                        <div class="copyright">
+                            <p class="f-left"><p><sup>&copy;</sup>Hugo Gaspard - {{ 'now'|date('Y') }} and beyond.</p> <span><a href="https://www.alapapa.fr/mentions-legales/">Mentions légales</a></span>
+                                
+                            </p>
+                            
+                        </div>
+                        
+                    </section>
+
+
+
+                </div>
+            </div>
+            
+        </footer>   
+       
+</body>
+            {% block javascripts %}
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+            {% endblock %}
+       
+</html>

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue sur la pages de nos projets{% endblock %}
+
+{% block body %}
+
+{%  for projet in projets %}
+
+    <h1>
+        <a href="{{path('direction_artistique', {'id': projet.id}) }}">        
+            {{projet.titre | upper}}
+        </a>
+    </h1>
+    
+    
+
+    <p>
+        {{ projet.description}}
+    </p>
+
+ {%  endfor %}
+
+{% endblock %}
