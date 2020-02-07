@@ -15,8 +15,11 @@ class ArticleController extends AbstractController
      */
     public function index()
     {
+        $articleRepository = $this->getDoctrine()->getRepository(Article::class);
+        //permet de récupérer le dernier article en date
+        $article = $articleRepository->findBy([], ['date' => "DESC"], 1);
         return $this->render('article/index.html.twig', [
-            'controller_name' => 'ArticleController',
+            'article' => $article[0],
         ]);
     }
   

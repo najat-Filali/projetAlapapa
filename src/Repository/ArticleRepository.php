@@ -37,15 +37,15 @@ class ArticleRepository extends ServiceEntityRepository
     */
 
     
-    public function findOneBySomeField($value): ?Article
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.date = :val')
-            ->setParameter('val', $value)
-            ->orderBy('a.date', 'ASC')
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
+    // public function findOneBySomeField($value): ?Article
+    // {
+    //     return $this->createQueryBuilder('a')
+    //         ->andWhere('a.date = :val')
+    //         ->setParameter('val', $value)
+    //         ->orderBy('a.date', 'ASC')
+    //         ->getQuery()
+    //         ->getOneOrNullResult()
+    //     ;
+    // }
     
 }

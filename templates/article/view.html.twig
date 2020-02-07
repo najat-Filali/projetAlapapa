@@ -11,7 +11,7 @@
 #}
 
   <div class="container">
-    <h1> {{article.titre}}</h1>
+    <h1> {{article.titre | upper }}</h1>
         <h3>
             Posté le 
             {{article.date | date("d/m/Y h:i")}}

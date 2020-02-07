@@ -93,9 +93,9 @@
         </div>
         <div class="col-md-9" style="display: flex;">
             <div>
-                <h3 style="text-align: end;">titre dernier article</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus error pariatur sequi voluptatem facere corporis, esse debitis obcaecati et soluta! Explicabo a laboriosam quasi dolorum, accusantium iusto exercitationem sit perspiciatis!</p>
-                <a href="{{path('article_view', {'id': 1}) }}" style="float:inline-end" >lire la suite</a>
+                <h3 style="text-align: end;">{{article.titre | upper }}</h3>
+                <p>{{article.contenu}}</p>
+                <a href="{{path('article_view', {'id': article.id}) }}" style="float:inline-end" >lire la suite</a>
             </div>
             <img src="http://placehold.it/200x200" alt="">
         </div>
