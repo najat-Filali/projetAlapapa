@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProjetController extends AbstractController
 {
     /**
-     * @Route("/projet", name="projet")
+     * @Route("/", name="projet")
      */
     public function index()
     {
@@ -17,7 +17,6 @@ class ProjetController extends AbstractController
             'controller_name' => 'ProjetController',
         ]);
     }
-
 
     /**
      * @Route("/direction_artistique", name="direction_artistique", methods={"GET"})
@@ -32,18 +31,15 @@ class ProjetController extends AbstractController
         ]);
     }
 
-      /**
+    /**
      * @Route("/direction_projet", name="direction_projet", methods={"GET"})
      */
     public function directionProjet(){
         $projetRepository = $this->getDoctrine()->getRepository(Projet::class);
 
         $projets =$projetRepository->findAll();
-
         return $this->render('projet/directionProjet.html.twig', [
             'projets' => $projets,
         ]);
     }
-
-
 }

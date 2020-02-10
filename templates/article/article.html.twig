@@ -4,22 +4,20 @@
 
 {% block body %}
 
-{%  for article in articles %}
+    {%  for article in articles %}
+        <h1>
+            <a href="{{path('article_view', {'id': article.id}) }}">        
+                {{article.titre | upper}}
+            </a>
+        </h1>
+        <h5> Categorie : {{ article.categorie }} </h5>
+        <h5>
+            {{article.date | date("d/m/Y h:i")}}
+        </h5>      
 
-    <h1>
-        <a href="{{path('article_view', {'id': article.id}) }}">        
-            {{article.titre | upper}}
-        </a>
-    </h1>
-    <h3>
-        {{article.date | date("d/m/Y h:i")}}
-    </h3>
-    
-
-    <p>
-        {{ article.contenu}}
-    </p>
-
- {%  endfor %}
+        <p>
+            {{ article.contenu}}
+        </p>
+    {%  endfor %}
 
 {% endblock %}

@@ -7,7 +7,7 @@
         {% block stylesheets %}
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="uploads/css/footer.css">
+        <link rel="stylesheet" href="{{asset('uploads/css/footer.css')}}">
         {% endblock %}
     </head>
     <body>
@@ -41,16 +41,16 @@
                     </div>
                     <ul class="container nav justify-content-end">
                         <li class="nav-item">
-                          <a class="nav-link active" href="direction_artistique">| Direction artistique |</a>
+                          <a class="nav-link active" href="{{path('direction_artistique')}}">| Direction artistique |</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="direction_projet">| Direction projet |</a>
+                          <a class="nav-link" href="{{path('direction_projet')}}">| Direction projet |</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="{{path('article')}}">| Nos articles |</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link " href="{{path('app_login')}}" tabindex="-1" >| Se connecter |</a>
+                          <a class="nav-link " href="{{path('app_register')}}" tabindex="-1" >| Nous contacter  |</a>
                         </li>
                       </ul>
 
@@ -68,52 +68,35 @@
         </div>
             
         <footer>       
-            <div class="footer">
+            <div class="footer" style="color:red">
                 <div id="button">
                 </div>
                 <div id="container">
                     <section id="cont">
                         <div class="footer_center">
-
                             <p>The sky's the limit </p>
                         </div>                      
                     </section>
-                    <section>
-                        <p class="h3"><br/> Conseil, Création et Accompagnement.</p>
-                        <div class="content">
-                            <div class="border-top-bottom">
-                                <article class="f-left col-2-1">
-                                    <a href="https://www.alapapa.fr">
-                                        <img class="f-left" src="" alt="HugoGaspard" width="139" height="100"/>
-                                    </a>
-                                    <p>
-                                        <span>Vous avez un projet ?</span>
-                                        <br/>
-                                        <em>
-                                            <span>01 48 75 59 59</span> ou <a href="{{path('message_new')}}"><span>nous contacter</span></a>
-                                        </em>
-                                    </p>
-                                </article>
-                                
-                            </div>
-                        </div>
-                        <div class="copyright">
-                            <p class="f-left"><p><sup>&copy;</sup>Hugo Gaspard - {{ 'now'|date('Y') }} and beyond.</p> <span><a href="https://www.alapapa.fr/mentions-legales/">Mentions légales</a></span>
-                                
+
+                    <section>  
+                        <div>
+                            <p>Conseil, Création et Accompagnement.</p>
+                            <p>
+                                <span>Vous avez un projet ?</span>
+                                <em>
+                                    <span>01 48 75 59 59</span> ou <a href="{{path('message_new')}}">nous contacter</a>
+                                </em>
                             </p>
-                            
-                        </div>
-                        
+
+                            <p><sup>&copy;</sup>Hugo Gaspard - {{ 'now'|date('Y') }} and beyond.</p> 
+                            <span><a href="https://www.alapapa.fr/mentions-legales/">Mentions légales</a></span>                                                                              
+                        </div>                       
                     </section>
-
-
-
                 </div>
-            </div>
-            
-        </footer>   
-       
-</body>
+            </div>           
+        </footer>         
+    </body>
+
             {% block javascripts %}
             <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

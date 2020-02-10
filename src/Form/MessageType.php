@@ -15,7 +15,6 @@ class MessageType extends AbstractType
         $builder
             ->add('objet')
             ->add('texte')
-            ->add('date')
             ->add('user')
 
         ;

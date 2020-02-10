@@ -5,10 +5,14 @@ namespace App\Controller;
 use App\Entity\Message;
 use App\Form\MessageType;
 use App\Repository\MessageRepository;
+use DateTime;
+use DateTimeInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints\DateTime as ConstraintsDateTime;
 
 /**
  * @Route("/message")
@@ -35,6 +39,7 @@ class MessageController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $message->setDate(new \DateTime()); 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($message);
             $entityManager->flush();
@@ -88,7 +93,7 @@ class MessageController extends AbstractController
             $entityManager->remove($message);
             $entityManager->flush();
         }
-
+        
         return $this->redirectToRoute('message_index');
     }
 }

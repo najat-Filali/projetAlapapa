@@ -31,6 +31,16 @@ class Projet
      */
     private $image;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $contenu;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $categorie;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,6 +78,30 @@ class Projet
     public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getContenu(): ?string
+    {
+        return $this->contenu;
+    }
+
+    public function setContenu(string $contenu): self
+    {
+        $this->contenu = $contenu;
+
+        return $this;
+    }
+
+    public function getCategorie(): ?bool
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(?bool $categorie): self
+    {
+        $this->categorie = $categorie;
 
         return $this;
     }

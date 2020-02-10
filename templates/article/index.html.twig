@@ -1,9 +1,6 @@
 {% extends 'base.html.twig' %}
 
-
-{% block title %}Tous nos articles{% endblock %}
-
-
+{% block title %}Bienvenue ! {% endblock %}
 
 {% block body %}
 <br>
@@ -36,7 +33,8 @@
     <hr>
     <section>
         <h2>NOS MISSIONS </h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt repellendus, non eaque voluptatem autem fuga ipsum laborum consequuntur accusamus cupiditate nostrum, eligendi minima nemo dolores.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Incidunt repellendus, non eaque voluptatem autem fuga ipsum laborum consequuntur accusamus cupiditate nostrum, eligendi minima nemo dolores.</p>
     </section>
     <hr>
 
@@ -87,17 +85,21 @@
         </div>
         </div>
     </div><br><br><hr>
-    <div class="containerfluid" style="display: flex;">
+    <div class="containerfluid" style="display: flex;" >
         <div class="col-md-3"><h2>Nos articles</h2>
             <a href="article" type="button">voir nos derniers articles</a>
         </div>
-        <div class="col-md-9" style="display: flex;">
+        <div class="col-md-6 offset-4" style="display: flex;">
             <div>
                 <h3 style="text-align: end;">{{article.titre | upper }}</h3>
                 <p>{{article.contenu}}</p>
                 <a href="{{path('article_view', {'id': article.id}) }}" style="float:inline-end" >lire la suite</a>
             </div>
-            <img src="http://placehold.it/200x200" alt="">
+            {% if article.image %}
+            <img src="{{ asset(article.image)}}" style="width:250px; height:250px;">
+            {% else %}
+            <img src="http://placehold.it/250x250" alt="">
+            {% endif %}
         </div>
     </div><br><br><hr>
 
