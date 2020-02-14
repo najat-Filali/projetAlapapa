@@ -11,15 +11,20 @@
             {{projet.titre | upper}}
         </a>
     </h1>
-    <p>
-    <img src="{{ asset(projet.image)}}" style="width:250px; height:250px;">
-       
-    </p>
+    <section>
+        <p>
+            <img src="{{ asset(projet.image)}}" style="width:250px; height:250px;">  
+        </p>
+        <p>
+            {{ projet.description}}
+        </p>
+        <p>
+            {{ projet.contenu}}
+        </p>
+
+    </section>
     
 
-    <p>
-        {{ projet.description}}
-    </p>
 
  {%  endfor %}
 

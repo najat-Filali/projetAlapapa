@@ -3,7 +3,7 @@ body{
   font-family: 'Source Sans Pro', sans-serif;
   font-weight:300;
   background-color:rgb(240, 237, 252);
-  color:rgb(187, 186, 186);
+  color:rgb(105, 103, 103);
 }
 section{
   text-align:center;
@@ -76,11 +76,5 @@ height:100%;
 	width:500px;
 	float:left;
   text-align:center;
-}
-.footer h3{
-	font-family: 'Helvetica';
-	font-size: 30px;
-	font-weight: 100;
-	margin-top:70px;
-	margin-left:40px;
+
 }

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Entity\Projet;
 use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,11 +17,19 @@ class ArticleController extends AbstractController
     public function index()
     {
         $articleRepository = $this->getDoctrine()->getRepository(Article::class);
-        //permet de récupérer le dernier article en date
-        $article = $articleRepository->findBy([], ['date' => "DESC"], 1);
+        $projetRepository = $this->getDoctrine()->getRepository(Projet::class);
         
+
+        //last article by date
+        $article = $articleRepository->findBy([], ['date' => "DESC"], 1);
+        $projet = $projetRepository->findBy([], ['id' => "DESC"], 3);
+             
         return $this->render('article/index.html.twig', [
             'article' => $article[0],
+            'projet1' => $projet[0], 
+            'projet2' => $projet[1], 
+            //'projet3' => $projet[2], 
+            
         ]);
     }
   

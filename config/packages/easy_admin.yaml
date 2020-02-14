@@ -34,10 +34,6 @@ easy_admin:
                 fields:
                     - { property: 'objet', type: 'text'}
                     - { property : 'texte', type: 'fos_ckeditor'}  
-     
-   
-
-         
    
 
     site_name: 'ALAPAPA <img src="/uploads/img/HG.jpg" style="heigth: 30px; width:30px;/>'

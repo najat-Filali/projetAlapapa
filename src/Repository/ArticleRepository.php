@@ -34,8 +34,8 @@ class ArticleRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+    
     */
-
     
     // public function findOneBySomeField($value): ?Article
     // {

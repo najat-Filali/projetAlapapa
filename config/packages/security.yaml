@@ -4,7 +4,6 @@ security:
             algorithm: auto
 
     providers:
-        # used to reload user from session & other features (e.g. switch_user)
         app_user_provider:                                          
             entity:
                 class: App\Entity\User
@@ -25,5 +24,5 @@ security:
                 target: accueil
 
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+         - { path: ^/admin, roles: ROLE_ADMIN }
+         - { path: ^/profile, roles: ROLE_USER }

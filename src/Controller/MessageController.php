@@ -39,7 +39,11 @@ class MessageController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // set date courante
             $message->setDate(new \DateTime()); 
+            // set User
+            $message->setUser($this->getUser()); 
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($message);
             $entityManager->flush();

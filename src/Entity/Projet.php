@@ -37,7 +37,7 @@ class Projet
     private $contenu;
 
     /**
-     * @ORM\Column(type="boolean", nullable=true)
+     * @ORM\Column(type="string", length=11, nullable=true)
      */
     private $categorie;
 

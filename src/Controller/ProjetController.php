@@ -13,11 +13,13 @@ class ProjetController extends AbstractController
      */
     public function index()
     {
+        $projetRepository = $this->getDoctrine()->getrepository(Projet::class); 
+        $projet =$projetRepository->findBy(['id']); 
         return $this->render('projet/index.html.twig', [
-            'controller_name' => 'ProjetController',
+            'projet'=> $projet, 
         ]);
     }
-
+   
     /**
      * @Route("/direction_artistique", name="direction_artistique", methods={"GET"})
      */
