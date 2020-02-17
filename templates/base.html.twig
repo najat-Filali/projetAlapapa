@@ -14,65 +14,56 @@
     <body>
       
         <header>
-            <div class="pos-f-t">
-                <nav class="navbar navbar-dark bg-dark">
-                    <div class="container-fluid d-flex justify-content-between">  
-                            <a href="/" class="navbar-brand d-flex align-items-center">
-                                <img src="{{ asset('/uploads/img/HG.jpg')}}" border-radius="40px" width="40" height="40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="13" r="4"/></img>
-                                <strong>ALAPAPA</strong> <br>
-                                <span class="text-muted">Les hommes et les enfants d'abord ! 
-                            </span> 
-                            </a>          
-                       
-                            <ul class="container-fluid nav justify-content-end">
-                                <li class="nav-item">
-                                  <a class="nav-link active" href="{{path('direction_artistique')}}">| Direction artistique |</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" href="{{path('direction_projet')}}">| Direction projet |</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" href="{{path('article')}}">| Nos articles |</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link " href="{{path('app_login')}}" tabindex="-1" >| Nous contacter  |</a>
-                                </li>
-                                <li><a href="https://www.facebook.com/hugogaspardpro/" class="text-white"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="https://twitter.com/hugogaspard" class="text-white"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="https://www.instagram.com/hugogaspardpro/" class="text-white"><i class="fa fa-instagram"></i></a></li>
-                            </ul>
-                    </div>
-                      
-                </nav>     
-                      
-            </div>        
-        </header> 
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+              <a href="/" class="navbar-brand d-flex align-items-center">
+                <img src="{{ asset('/uploads/img/HG.jpg')}}" border-radius="40px" width="40" height="40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="13" r="4"/></img>
+                <strong>ALAPAPA</strong> <br>
+                <span class="text-muted">Les hommes et les enfants d'abord ! 
+            </span> 
+            </a> 
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{path('direction_artistique')}}">| Direction artistique |</a>
+            
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{path('direction_projet')}}">| Direction projet |</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{path('article')}}">| Nos articles |</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="{{path('app_login')}}" tabindex="-1" >| Nous contacter  |</a>
+                  </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    
+                        <a href="https://www.facebook.com/hugogaspardpro/" class="text-white"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com/hugogaspard" class="text-white"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/hugogaspardpro/" class="text-white"><i class="fa fa-instagram"></i></a>
+                    
+                </form>
+              </div>
+            </nav>
+          </header>
    
         
         <div class="container-fluid">
             {% if app.user %}
-            <p> Bienvenue {{ app.user.username }} </p>
+            <p> Bienvenue {{ app.user.username | capitalize }} </p>
             {% endif %}
 
             {% block body %}
             {% endblock %}
         </div>
-            
 
-        <footer class="footer mt-auto py-3">
-            <div class="container">
-              <span class="text-muted">Place sticky footer content here.</span>
-            </div>
-          </footer>
-
-
-<!-- Footer -->
 <footer class="footer mt-auto py-3" style="background-color: rgb(66, 65, 65);">
 
-    <!-- Footer Elements -->
     <div class="container">
-        <p>Conseil, Création et Accompagnement.</p>
-      <!-- Call to action -->
       <ul class="list-unstyled list-inline text-center py-2">
         <li class="list-inline-item">
           <h5 class="mb-1">Vous avez un projet ? </h5>
@@ -82,52 +73,16 @@
           <a href="{{path('app_login')}}" class="btn btn-rounded">Contactez-nous !</a>
         </li>
       </ul>
-      <!-- Call to action -->
-  
+      <div class="footer-copyright text-center py-3" style="background-color: rgb(59, 59, 59);">© Hugo Gaspard - {{ 'now'|date('Y') }} and beyond.   
+
+      <p class="float-right"><a href="#" type="button" class="btn btn-dark" >Back to top</a></p>
     </div>
-    <!-- Footer Elements -->
-  
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3" style="background-color: rgb(39, 39, 39);">© Hugo Gaspard - {{ 'now'|date('Y') }} and beyond.
-     
+ 
     </div>
-    <!-- Copyright -->
+    <br><br><br>
   
   </footer>
-  <!-- Footer -->
-
-
-
-        <!-- 
-        <footer class="container-fluid ">       
-            <div class="footer" >
-                <div id="button">
-                </div>
-                <div id="container">
-                    <div id="cont">
-                        <div class="footer_center">
-                            <p>The sky's the limit </p>
-                        </div>                      
-                    </div>
-
-                    <div>  
-                        <div>
-                            <p>Conseil, Création et Accompagnement.</p>
-                            <p>
-                                <span>Vous avez un projet ?</span>
-                                <em>
-                                    <span>01 48 75 59 59</span> ou <a href="{{path('app_login')}}">nous contacter</a>
-                                </em>
-                                <p><sup>&copy;</sup>Hugo Gaspard - {{ 'now'|date('Y') }} and beyond.</p> 
-                                <span><a href="https://www.alapapa.fr/mentions-legales/">Mentions légales</a></span>                                                                              
-                            </p>
-
-                        </div>                       
-                    </div>
-                </div>
-            </div>           
-        </footer>     
-        -->    
+ 
     </body>
 
             {% block javascripts %}

@@ -1,5 +1,14 @@
+{% extends 'base.html.twig' %}
+
+ {% block body %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 {{ form_start(form) }}
     {{ form_widget(form) }}
-    
-    <button class="btn">{{ button_label|default('Envoyer') }}</button>
+    <div class="container">
+    <button class="btn btn-outline-info">{{ button_label|default('Envoyer') }}</button>
+    <a href="{{ path('app_logout') }}" type="button" class="btn btn-outline-info" >Se deconnecter</a>
+    </div>
 {{ form_end(form) }}
+
+{% endblock %}

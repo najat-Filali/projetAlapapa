@@ -19,17 +19,14 @@ class ArticleController extends AbstractController
         $articleRepository = $this->getDoctrine()->getRepository(Article::class);
         $projetRepository = $this->getDoctrine()->getRepository(Projet::class);
         
-
-        //last article by date
+        //last article order by date
         $article = $articleRepository->findBy([], ['date' => "DESC"], 1);
-        $projet = $projetRepository->findBy([], ['id' => "DESC"], 3);
+        //3 lasts projects 
+        $projets = $projetRepository->findBy([], ['id' => "DESC"], 3);
              
         return $this->render('article/index.html.twig', [
             'article' => $article[0],
-            'projet1' => $projet[0], 
-            'projet2' => $projet[1], 
-            //'projet3' => $projet[2], 
-            
+            'projets' => $projets 
         ]);
     }
   
@@ -61,6 +58,5 @@ class ArticleController extends AbstractController
         return $this->render('article/view.html.twig', [
             'article' => $article,
         ]);      
-    }
-    
+    } 
 }

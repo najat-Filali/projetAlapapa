@@ -3,11 +3,13 @@
 {% block title %}Nouveau Message{% endblock %}
 
 {% block body %}
-    <h1>Nouveau Message</h1>
-    
-    {{ include('message/_form.html.twig') }}
-
-    <a href="{{ path('accueil') }}">Accueil</a>
-    <a href="{{ path('app_logout') }}">Se deconnecter</a>
+    <div class="container">
+        <div class="col-sm-10">
+            
+            <h1>Nouveau Message</h1>
+            
+            {{ include('message/_form.html.twig') }}
+        </div>
+    </div>
 
 {% endblock %}

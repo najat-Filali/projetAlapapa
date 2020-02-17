@@ -9,15 +9,19 @@
 {% endif %}
 
   <div class="container">
-    <h1> {{article.titre | upper }}</h1>
-        <h6>
+    <div>
+
+      <h1> {{article.titre | upper }}</h1>
+      <h6> Categorie : {{ article.categorie}}</h6>
+          <p>
             Posté le 
             {{article.date | date("d/m/Y h:i")}}
-        </h6>
-        <h6> Categorie : {{ article.categorie}}</h6>
-        <h4> par Hugo Gaspard</h4>   
+          </p>
+          <br>
+          <p> {{article.contenu}}</p>
+          <h6> par Hugo Gaspard</h> 
 
-        <p> {{article.contenu}}</p>
+    </div>
   </div>
 
 {% endblock %}

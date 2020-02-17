@@ -34,102 +34,109 @@
     </section>
     <br><br>
     <hr>
-    <section>
-        <h2 row >NOS MISSIONS </h2>
-        <p row >◊ Communication + marketing + stratégie <br>
-            ◊ Contenu + SEO 
-            ◊ Copywriterbr  
-            ◊ Direction artistique  
-            ◊ Création graphique Print + digital 
-            ◊ Webdesign & vidéo animation <br>
-            #scribe #motiondesign #indesign #aftereffects #fuse</p>
+    <section id="marketing">
+        <div class="container marketing">
+            <h2>NOS MISSIONS</h2>
+          
+            <div class="row">
+              <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                <h2>Heading</h2>
+                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                
+              </div>
+              <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                <h2>Heading</h2>
+                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+               
+              </div>
+              <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                <h2>Heading</h2>
+                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        
+            </div>
     </section>
     <hr>
-
-   <!-- Jumbotron -->
-<div class="col-4 card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/forest2.jpg);">
-    <div class="text-white text-center rgba-stylish-strong py-5 px-4">
-      <div class="py-5">
-  
-        <!-- Content -->
-        <h5 class="h5 orange-text"><i class="fas fa-camera-retro"></i> Photography</h5>
-        <h2 class="card-title h2 my-4 py-2">Jumbotron with image overlay</h2>
-        <p class="mb-4 pb-2 px-md-5 mx-md-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur obcaecati vero aliquid libero doloribus ad, unde tempora maiores, ullam, modi qui quidem minima debitis perferendis vitae cumque et quo impedit.</p>
-        <a class="btn peach-gradient"><i class="fas fa-clone left"></i> View project</a>
-  
-      </div>
-    </div>
-  </div>
-  <!-- Jumbotron -->    
-        <div class=" col-4">
-            <div class="card mb-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ projet2.titre }}</text></svg>
-                <div class="card-body">
-                    <p class="card-text"> {{ projet2.description }} </p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">voir plus</button>
-                        
+    <section id="projets">
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    {% for projet in projets %}
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                            <div class="card-body">
+                            <p class="card-text">{{ projet.description}}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Voir plus </button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div>
+                            </div>
                         </div>
-                        <small class="text-muted">{{ 'now'|date('Y') }}</small>
                     </div>
+                    {%  endfor %}
                 </div>
             </div>
         </div>
-        <div class=" col-4">
-            <div class="card mb-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns=" {{ projet1.image }} " preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: image-projet1"><title>{{ projet1.titre }}</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"> {{ projet1.titre }}</text></svg>
-                <div class="card-body">
-                    <p class="card-text"> {{ projet1.description }} </p>
-                    <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Voir plus</a>
-                    
-                    </div>
-                    <small class="text-muted">{{ 'now'|date('Y') }}</small>
-                </div>
+        <br><br><hr>
+    </section>
+    <section id="featurette">
+        <div class="row featurette">
+            <div class="col-md-7 ">
+                <h2 class="featurette-heading">Notre dernier article :  <span class="text-muted"></span></h2>
+                <h3>{{article.titre | upper }}</h3>
+                <p class="lead">{{article.contenu}}</p>
+                <a href="{{path('article_view', {'id': article.id}) }}" type="button" class="btn btn-outline-info" >lire la suite</a>
+            </div>
+            <div class="col-md-5 ">
+                {% if article.image %}
+                <img src="{{ asset(article.image)}}" style="width:250px; height:250px;">
+                {% else %}
+                <img src="https://mdbootstrap.com/img/Photos/Others/img%20(29).jpg" class="img-fluid" alt="">
+                {% endif %}
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Ils parlent de nous </span></h2>
+            <p class="lead">"C’est en modifiant la vision qu’ont les gens de la paternité et notamment les chefs d’entreprise, qu’on va résoudre les inégalités."<br>
+                Allonger la durée du congé paternité, c’est le combat de <strong>Hugo Gaspard</strong>, fondateur de Daronmagazine.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <div class="embed-responsive embed-responsive-16by9">
+                <object class="embed-responsive-item allowfullscreen" type='application/x-shockwave-flash' style='width:500px; height:300px;' data='https://www.youtube.com/v/e3XkwaNnHJ0' >
+                    <param name='movie' value='https://www.youtube.com/v/e3XkwaNnHJ0' />
+                </object>
             </div>
         </div>
         </div>
-    </div><br><br><hr>
-    <div class="container-fluid" style="display: flex;" >
-        <div row class="col-md-3 "><h2>Nos articles</h2>
-            <a href="article" type="button">voir nos derniers articles</a>
-        </div>
-        <div row class="col-md-5 offset-4 ">
-            <h2>Notre dernier article publié </h2>
-            <div style="display: flex;">
-                <div style="text-align: end;">
-                    <h3>{{article.titre | upper }}</h3>
-                    <p>{{article.contenu}}</p>
-                    <a href="{{path('article_view', {'id': article.id}) }}"  >lire la suite</a>
-                </div>
+        <hr class="featurette-divider">
+    </section>
+    <br>
+    <section id="partenaires">
+        <br>
+        <div class="album py-5 bg-light">
+            <div class="container-fluid">
                 <div>
-                    {% if article.image %}
-                    <img src="{{ asset(article.image)}}" style="width:250px; height:250px;">
-                    {% else %}
-                    <img src="http://placehold.it/250x250" alt="">
-                    {% endif %}
+                    <h3 style="text-align: center;">ILS NOUS FONT CONFIANCE </h3>
+
+                    <div row >
+                        <img class="rounded-circle" src="https://qph.fs.quoracdn.net/main-qimg-5cba712e3aa6fabcf813f60d13097d61" style="width:80px; height:80px; border-radius: 30px"  alt="">
+                        <img class="rounded-circle" col-2 src="https://qph.fs.quoracdn.net/main-qimg-5cba712e3aa6fabcf813f60d13097d61" style="width:80px; height:80px; border-radius: 30px"  alt="">
+                        <img class="rounded-circle" col-2 src="http://pigment.github.io/fake-logos/logos/large/color/cheshire-county-hygiene-services.png" style="width:80px; height:80px; border-radius: 30px;"  alt="">
+                        <img class="rounded-circle" col-2 src="https://www.xinode.org/wp-content/uploads/2015/11/fake-logo-artwork.png" style="width:80px; height:80px; border-radius: 30px"  alt="">
+                        <img class="rounded-circle" col-2 src="https://thisisnotadvertising.files.wordpress.com/2012/02/tumblr_lpgq8fjbov1qfw54v.jpg" style="width:80px; height:80px; border-radius: 30px"  alt="">
+                        <img class="rounded-circle" col-2 src="https://qph.fs.quoracdn.net/main-qimg-5ac42698d452f432c64fb6575c3b546f" style="width:80px; height:80px; border-radius: 30px"  alt="">
+                    </div>
                 </div>
-            </div>
+            </div><br>
         </div>
-    </div><br><br><hr>
-
-    <div class="container-fluid">
-        <section>
-            <h3 style="text-align: center;">ILS NOUS FONT CONFIANCE </h3>
-
-            <div row >
-                <img class="rounded" src="https://qph.fs.quoracdn.net/main-qimg-5cba712e3aa6fabcf813f60d13097d61" style="width:80px; height:80px; border-radius: 30px"  alt="">
-                <img class="rounded" col-2 src="https://qph.fs.quoracdn.net/main-qimg-5cba712e3aa6fabcf813f60d13097d61" style="width:80px; height:80px; border-radius: 30px"  alt="">
-                <img class="rounded" col-2 src="http://pigment.github.io/fake-logos/logos/large/color/cheshire-county-hygiene-services.png" style="width:80px; height:80px; border-radius: 30px;"  alt="">
-                <img class="rounded" col-2 src="https://www.xinode.org/wp-content/uploads/2015/11/fake-logo-artwork.png" style="width:80px; height:80px; border-radius: 30px"  alt="">
-                <img class="rounded" col-2 src="https://thisisnotadvertising.files.wordpress.com/2012/02/tumblr_lpgq8fjbov1qfw54v.jpg" style="width:80px; height:80px; border-radius: 30px"  alt="">
-                <img class="rounded" col-2 src="https://qph.fs.quoracdn.net/main-qimg-5ac42698d452f432c64fb6575c3b546f" style="width:80px; height:80px; border-radius: 30px"  alt="">
-
-            </div>
-        </section>
-       
-    </div><br><br><hr>
+        <br><hr>
+    </section>
 
 {% endblock %}

@@ -3,7 +3,7 @@ easy_admin:
         form_theme: # Both themes are for ckeditor integration
             - "@EasyAdmin/form/bootstrap_4.html.twig"
             - "@FOSCKEditor/Form/ckeditor_widget.html.twig"
-
+#ds form field nous avons les champs qui apparaissent a "edit" ds admin, pas de type et Admin choisi le plus pertinent
     entities:
         Article:
             class: App\Entity\Article
@@ -11,7 +11,7 @@ easy_admin:
                 fields:
                     - { property: 'titre', type: 'text'}
                     - { property : 'contenu', type: 'fos_ckeditor'}  
-                    - { property : 'categorie', type: 'fos_ckeditor'}  
+                    - categorie  
                    
         Projet: 
             class: App\Entity\Projet
@@ -20,20 +20,23 @@ easy_admin:
                     - { property: 'titre', type: 'text'}
                     - { property: 'description', type: 'fos_ckeditor'} 
                     - { property: 'contenu', type: 'fos_ckeditor' }
+                    - categorie
                    
-
         User: 
             class: App\Entity\User
             form:
                 fields:
-                    - { property: 'titre', type: 'text'}
-                    - { property : 'contenu', type: 'fos_ckeditor'}  
+                    - { property: 'username', type: 'text'}
+                    - { property: 'email', type: 'text'}
+                    - { property : 'phoneNumber', type: 'fos_ckeditor'}  
+                    - role
         Message: 
             class: App\Entity\Message 
             form:
                 fields:
                     - { property: 'objet', type: 'text'}
                     - { property : 'texte', type: 'fos_ckeditor'}  
+
    
 
     site_name: 'ALAPAPA <img src="/uploads/img/HG.jpg" style="heigth: 30px; width:30px;/>'

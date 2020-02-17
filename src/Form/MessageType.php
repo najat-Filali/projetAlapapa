@@ -15,8 +15,6 @@ class MessageType extends AbstractType
         $builder
             ->add('objet')
             ->add('texte')
-            
-
         ;
     }
 
