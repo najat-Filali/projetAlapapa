@@ -17,12 +17,11 @@
                     </div>                    
                 </div>
                 <div class="col-md-7 text-md-left ml-3 mt-3">
-                    <a href="#!" class="green-text">
-                        <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i>Categorie : {{ article.categorie }} </h6>
-                    </a>    
+                    <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i>Categorie : {{ article.categorie }} </h6>
+                   
                     <h4 class="h4 mb-4"> {{article.titre | upper}} </h4>      
                                          
-                    <p class="font-weight-normal">{{ article.contenu}}</p>
+                    <p class="font-weight-normal">{{ article.description}}</p>
                     <p class="font-weight-normal">by <a><strong>Hugo Gaspard</strong></a>{{article.date | date("d/m/Y h:i")}}</p>          
                     <a class="btn btn-success" href="{{path('article_view', {'id': article.id}) }}">Lire plus</a>
                     

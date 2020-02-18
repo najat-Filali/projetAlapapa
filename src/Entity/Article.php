@@ -31,15 +31,21 @@ class Article
      */
     private $date;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $categorie;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\CategorieArticle", inversedBy="articles")
+     */
+    private $categorie;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $description;
 
     public function getId(): ?int
     {
@@ -82,17 +88,6 @@ class Article
         return $this;
     }
 
-    public function getCategorie(): ?string
-    {
-        return $this->categorie;
-    }
-
-    public function setCategorie(string $categorie): self
-    {
-        $this->categorie = $categorie;
-
-        return $this;
-    }
 
     public function getImage(): ?string
     {
@@ -105,4 +100,29 @@ class Article
 
         return $this;
     }
+
+    public function getCategorie(): ?CategorieArticle
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(?CategorieArticle $categorie): self
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
 }

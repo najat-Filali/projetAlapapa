@@ -37,9 +37,10 @@ class Projet
     private $contenu;
 
     /**
-     * @ORM\Column(type="string", length=11, nullable=true)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Categorie", inversedBy="projets")
      */
     private $categorie;
+
 
     public function getId(): ?int
     {
@@ -94,15 +95,16 @@ class Projet
         return $this;
     }
 
-    public function getCategorie(): ?bool
+    public function getCategorie(): ?Categorie
     {
         return $this->categorie;
     }
 
-    public function setCategorie(?bool $categorie): self
+    public function setCategorie(?Categorie $categorie): self
     {
         $this->categorie = $categorie;
 
         return $this;
     }
+
 }

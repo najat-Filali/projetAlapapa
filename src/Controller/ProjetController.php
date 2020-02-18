@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Categorie;
 use App\Entity\Projet;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -25,8 +26,9 @@ class ProjetController extends AbstractController
      */
     public function directionArt(){
         $projetRepository = $this->getDoctrine()->getRepository(Projet::class);
+        $cat = $this->getDoctrine()->getRepository(Categorie::class)->findOneBy(['nom' => 'artistique']);
 
-        $projets =$projetRepository->findAll();
+        $projets =$projetRepository->findBy(['categorie'=>$cat], [], 3 );
 
         return $this->render('projet/directionArtistique.html.twig', [
             'projets' => $projets,
@@ -38,8 +40,10 @@ class ProjetController extends AbstractController
      */
     public function directionProjet(){
         $projetRepository = $this->getDoctrine()->getRepository(Projet::class);
+        $cat = $this->getDoctrine()->getRepository(Categorie::class)->findOneBy(['nom' => 'projet']);
 
-        $projets =$projetRepository->findAll();
+        $projets =$projetRepository->findBy(['categorie'=>$cat], [], 3);
+
         return $this->render('projet/directionProjet.html.twig', [
             'projets' => $projets,
         ]);

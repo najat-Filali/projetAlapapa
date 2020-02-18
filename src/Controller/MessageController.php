@@ -47,7 +47,7 @@ class MessageController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($message);
             $entityManager->flush();
-
+            
             return $this->redirectToRoute('message_index');
         }
 

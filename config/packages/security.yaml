@@ -22,7 +22,8 @@ security:
                 path: app_logout
                 # where to redirect after logout
                 target: accueil
-
+ # only the first acces control that matches will be used
+ # way to control access for large sections of the site
     access_control:
          - { path: ^/admin, roles: ROLE_ADMIN }
          - { path: ^/profile, roles: ROLE_USER }

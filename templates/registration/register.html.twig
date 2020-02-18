@@ -3,16 +3,24 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <h1>inscrivez- vous !</h1>
+ <div class="container">
+        <div class="col-sm-10">
+            <h1 class="h3 mb-3 font-weight-normal">inscrivez- vous !</h1>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.username) }}
-        {{ form_row(registrationForm.plainPassword) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-        <br>
+            {{ form_start(registrationForm) }}
+                <small>
+                    {{ form_errors(registrationForm) }}
+                </small>
+                
+                {{ form_row(registrationForm.username, {'attr': {'placeholder': "Nom d\'utilisateur", 'class':"form-control" }}) }}
+                {{ form_row(registrationForm.plainPassword, {'attr': {'placeholder': "Mot de passe", 'class':"form-control" }}) }}
+                {{ form_row(registrationForm.email, {'attr': {'placeholder': "email", 'class':"form-control" }}) }}
+                {{ form_row(registrationForm.agreeTerms) }}
+                <br>
 
-        <button class="btn btn-outline-info">S'enregistrer</button>
-        
-    {{ form_end(registrationForm) }}
+                <button  type="submit" class="btn btn-outline-info" >S'enregistrer</button>
+         
+            {{ form_end(registrationForm) }}
+    </div>
+</div>
 {% endblock %}
