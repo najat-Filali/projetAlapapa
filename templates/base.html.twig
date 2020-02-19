@@ -41,6 +41,11 @@
                   <li class="nav-item">
                     <a class="nav-link " href="{{path('app_login')}}" tabindex="-1" >| Nous contacter  |</a>
                   </li>
+                  {% if is_granted('ROLE_ADMIN') %}
+                  <li class="nav-item">
+                    <a class="nav-link " href="/admin" tabindex="-1" >| Admin |</a>
+                  </li>
+                  {% endif %}
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
                     
@@ -60,6 +65,7 @@
             {% endif %}
 
             {% block body %}
+
             {% endblock %}
         </div>
 
@@ -81,7 +87,7 @@
     </div>
  
     </div>
-    <br><br><br>
+    
   
   </footer>
  

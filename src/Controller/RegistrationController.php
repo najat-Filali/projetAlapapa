@@ -30,7 +30,7 @@ class RegistrationController extends AbstractController
                 )
             );
 
-            //definition des roles existants
+            //define roles 
             $roles[]=['ROLE_ADMIN', 'ROLE_USER'];    
             $user->setRoles($user->getRoles());
 
@@ -40,7 +40,7 @@ class RegistrationController extends AbstractController
 
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('app_login');
+            return $this->redirectToRoute('app_login');  //après connexion
         }
 
         return $this->render('registration/register.html.twig', [

@@ -1,14 +1,9 @@
-body {
-    padding-top: 6rem;
-    padding-bottom: 3rem;
-    color: #5a5a5a;
-    
-  }
- 
-  .marketing .col-lg-4 {
+
+ .marketing .col-lg-4 {
     margin-bottom: 1.5rem;
     text-align: center;
   }
+
   .marketing h2 {
     font-weight: 400;
   }
@@ -30,6 +25,7 @@ body {
       font-size: 3.5rem;
     }
   }
+
 .featurette-heading {
     font-weight: 300;
     line-height: 1;
@@ -37,7 +33,6 @@ body {
   }
 
   @media (min-width: 40em) {
-   
     .featurette-heading {
       font-size: 50px;
     }

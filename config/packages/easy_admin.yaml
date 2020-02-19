@@ -3,21 +3,47 @@ easy_admin:
         form_theme: # Both themes are for ckeditor integration
             - "@EasyAdmin/form/bootstrap_4.html.twig"
             - "@FOSCKEditor/Form/ckeditor_widget.html.twig"
-#ds form field nous avons les champs qui apparaissent a "edit" ds admin, pas de type et Admin choisi le plus pertinent
+#ds form field nous avons les champs qui apparaissent a "edit" ds admin, si le type n'est pas precisé, Admin choisi le plus pertinent
     entities:
         Article:
             class: App\Entity\Article
+            list:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '/images/articles', label: 'image'}
+                    - titre
+                    - description 
+                    - contenu
+                    - categorie
+            show: 
+                fields:
+                    - { property: 'image', type: 'image', base_path: '/images/articles', label: 'image'}
+            
             form:
                 fields:
-                    - { property: 'titre', type: 'text'}
+                    - { property: 'imageFile', type: 'vich_image', label: 'image' }
+                    - { property: 'titre', type: 'fos_ckeditor'}
+                    - { property : 'description', type: 'fos_ckeditor'}  
                     - { property : 'contenu', type: 'fos_ckeditor'}  
                     - categorie  
                    
         Projet: 
             class: App\Entity\Projet
+            list:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '/images/projets', label: 'image'}
+                    - titre
+                    - description 
+                    - contenu
+                    - categorie
+
+            show: 
+                fields:
+                    - { property: 'image', type: 'image', base_path: '/images/projets', label: 'image'}
+
             form:
                 fields:
-                    - { property: 'titre', type: 'text'}
+                    - { property: 'imageFile', type: 'vich_image', label: 'image' }
+                    - { property: 'titre', type: 'fos_ckeditor'}
                     - { property: 'description', type: 'fos_ckeditor'} 
                     - { property: 'contenu', type: 'fos_ckeditor' }
                     - categorie
@@ -30,12 +56,20 @@ easy_admin:
                     - { property: 'email', type: 'text'}
                     - { property : 'phoneNumber', type: 'fos_ckeditor'}  
                     - role
+
         Message: 
             class: App\Entity\Message 
             form:
                 fields:
                     - { property: 'objet', type: 'text'}
                     - { property : 'texte', type: 'fos_ckeditor'}  
+
+        CategorieArticle: 
+            class: App\Entity\CategorieArticle
+            form:
+                fields:
+                    - { property: 'nom', type: 'text'}
+
 
    
 

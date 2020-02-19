@@ -3,7 +3,7 @@
 {% block title %}Bienvenue ! {% endblock %}
 
 {% block body %}
-<br>
+
 
     <section class="carousel">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
@@ -32,7 +32,6 @@
         </div>
         
     </section>
-    <br><br>
     <hr>
     <section id="marketing">
         <div class="container marketing">
@@ -63,6 +62,7 @@
         <div class="album py-5 bg-light">
             <div class="container">
                 <div class="row">
+
                     {% for projet in projets %}
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
@@ -177,13 +177,12 @@
       </div>
     </div>
   </section>
-
-  
-                </div>
-            </div>
-        </div>
-        <br><br><hr>
+</div>
+</div>
+</div>
+   
     </section>
+    <hr>
     <section id="featurette">
         <div class="row featurette">
             <div class="col-md-7 ">
@@ -194,7 +193,7 @@
             </div>
             <div class="col-md-5 ">
                 {% if article.image %}
-                <img src="{{ asset(article.image)}}" style="width:250px; height:250px;">
+                <img src="{{ asset('images/articles/'~ article.image) }}" style="width:400px; height:400px;">
                 {% else %}
                 <img src="https://mdbootstrap.com/img/Photos/Others/img%20(29).jpg" class="img-fluid" alt="">
                 {% endif %}
@@ -217,7 +216,7 @@
         </div>
         <hr class="featurette-divider">
     </section>
-    <br>
+   
     <section id="partenaires">
         <br>
         <div class="album py-5 bg-light">

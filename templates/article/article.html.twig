@@ -10,19 +10,19 @@
             <div class="row">
                 <div class="col-md-4 offset-md-1 mx-3 my-3">
                     <div class="view overlay">
-                        <img src="https://mdbootstrap.com/img/Photos/Others/laptop-sm.jpg" class="img-fluid" alt="Sample image for first version of blog listing">
+                        <img src="{{ asset('images/articles/'~ article.image) }}" class="img-fluid" alt="Sample image for first version of blog listing">
                         <a>
                             <div class="mask rgba-white-slight"></div>
                         </a>
                     </div>                    
                 </div>
                 <div class="col-md-7 text-md-left ml-3 mt-3">
-                    <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i>Categorie : {{ article.categorie }} </h6>
+                    <h6 class="h6 pb-1">Categorie : {{ article.categorie }} </h6>
                    
                     <h4 class="h4 mb-4"> {{article.titre | upper}} </h4>      
-                                         
+                                      
                     <p class="font-weight-normal">{{ article.description}}</p>
-                    <p class="font-weight-normal">by <a><strong>Hugo Gaspard</strong></a>{{article.date | date("d/m/Y h:i")}}</p>          
+                    <p class="font-weight-normal">par <a><strong>Hugo Gaspard</strong></a> le {{article.date | date("d/m/Y h:i")}}</p>          
                     <a class="btn btn-success" href="{{path('article_view', {'id': article.id}) }}">Lire plus</a>
                     
                 </div>           

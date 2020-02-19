@@ -5,20 +5,21 @@
 {% block body %}
  <div class="container">
         <div class="col-sm-10">
-            <h1 class="h3 mb-3 font-weight-normal">inscrivez- vous !</h1>
+            <h1 class="h3 mb-3 font-weight-normal">Inscrivez- vous !</h1>
 
             {{ form_start(registrationForm) }}
                 <small>
                     {{ form_errors(registrationForm) }}
                 </small>
                 
-                {{ form_row(registrationForm.username, {'attr': {'placeholder': "Nom d\'utilisateur", 'class':"form-control" }}) }}
-                {{ form_row(registrationForm.plainPassword, {'attr': {'placeholder': "Mot de passe", 'class':"form-control" }}) }}
-                {{ form_row(registrationForm.email, {'attr': {'placeholder': "email", 'class':"form-control" }}) }}
-                {{ form_row(registrationForm.agreeTerms) }}
+                {{ form_row(registrationForm.username, {'label':'Nom d\'utilisateur', 'attr': {'placeholder': "Nom d\'utilisateur", 'class':"form-control" }}) }}
+                {{ form_row(registrationForm.plainPassword, {'label':'Mot de passe','attr': {'placeholder': "Mot de passe", 'class':"form-control" }}) }}
+                {{ form_row(registrationForm.confirm_password, {'label':'Confirmation mot de passe','attr': {'placeholder': "Confirmer votre mot de passe", 'class':"form-control" }}) }}
+                {{ form_row(registrationForm.email, {'label':'Email','attr': {'placeholder': "email", 'class':"form-control" }}) }}
+                {{ form_row(registrationForm.agreeTerms, {'label':'Accepter nos conditions '}) }}
                 <br>
 
-                <button  type="submit" class="btn btn-outline-info" >S'enregistrer</button>
+                <button type="submit" class="btn btn-outline-info" >S'enregistrer</button>
          
             {{ form_end(registrationForm) }}
     </div>
