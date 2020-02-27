@@ -37,9 +37,9 @@ class User implements UserInterface
     private $password;
 
     /** 
-    *
+    * @Assert\EqualTo(propertyPath="password")
     */
-    public $confirm_password; 
+    private $confirm_password; 
 
     /**
      * @ORM\Column(type="string", length=180)
@@ -103,6 +103,20 @@ class User implements UserInterface
     public function setPassword(string $password): self
     {
         $this->password = $password;
+
+        return $this;
+    }
+     /**
+     * @see UserInterface
+     */
+    public function getConfirmPassword(): string
+    {
+        return (string) $this->confirm_password;
+    }
+
+    public function setConfirmPassword(string $confirm_password): self
+    {
+        $this->confirm_password = $confirm_password;
 
         return $this;
     }

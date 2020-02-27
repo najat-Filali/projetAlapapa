@@ -28,7 +28,7 @@ class ProjetController extends AbstractController
         $projetRepository = $this->getDoctrine()->getRepository(Projet::class);
         $cat = $this->getDoctrine()->getRepository(Categorie::class)->findOneBy(['nom' => 'artistique']);
 
-        $projets =$projetRepository->findBy(['categorie'=>$cat], [], 3 );
+        $projets =$projetRepository->findBy(['categorie'=>$cat] );
 
         return $this->render('projet/directionArtistique.html.twig', [
             'projets' => $projets,
@@ -42,7 +42,7 @@ class ProjetController extends AbstractController
         $projetRepository = $this->getDoctrine()->getRepository(Projet::class);
         $cat = $this->getDoctrine()->getRepository(Categorie::class)->findOneBy(['nom' => 'projet']);
 
-        $projets =$projetRepository->findBy(['categorie'=>$cat], [], 3);
+        $projets =$projetRepository->findBy(['categorie'=>$cat]);
 
         return $this->render('projet/directionProjet.html.twig', [
             'projets' => $projets,

@@ -3,7 +3,9 @@ easy_admin:
         form_theme: # Both themes are for ckeditor integration
             - "@EasyAdmin/form/bootstrap_4.html.twig"
             - "@FOSCKEditor/Form/ckeditor_widget.html.twig"
-#ds form field nous avons les champs qui apparaissent a "edit" ds admin, si le type n'est pas precisé, Admin choisi le plus pertinent
+
+    site_name: 'ALAPAPA <img src="/uploads/img/HG.jpg" style="heigth: 30px; width:30px;/>'
+    
     entities:
         Article:
             class: App\Entity\Article
@@ -59,9 +61,15 @@ easy_admin:
 
         Message: 
             class: App\Entity\Message 
+            list:
+                fields:
+                    - objet
+                    - texte
+                    - user
+                    - date
             form:
                 fields:
-                    - { property: 'objet', type: 'text'}
+                    - { property: 'objet', type: 'fos_ckeditor'}
                     - { property : 'texte', type: 'fos_ckeditor'}  
 
         CategorieArticle: 
@@ -73,4 +81,4 @@ easy_admin:
 
    
 
-    site_name: 'ALAPAPA <img src="/uploads/img/HG.jpg" style="heigth: 30px; width:30px;/>'
+ 

@@ -1,10 +1,5 @@
 
-
-
-
-  form input::placeholder {
-    color: aqua;
-  }
+ 
 
   p {
     line-height: 1.75;
@@ -21,7 +16,10 @@
   .text-primary {
     color: #fed136 !important;
   }
-  
+  section {
+    padding: 150px 0;
+  }
+
   h1,
   h2,
   h3,
@@ -33,7 +31,7 @@
   }
   
   .page-section {
-    padding: 100px 0;
+    padding-top: 50px 0;
   }
   
   .page-section h2.section-heading {
@@ -53,7 +51,7 @@
   
   @media (min-width: 768px) {
     section {
-      padding: 150px 0;
+      padding: 100px 0;
     }
   }
   
@@ -104,9 +102,6 @@
     box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
   }
  
-  
-
-  
   #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;

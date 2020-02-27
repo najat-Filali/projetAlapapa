@@ -21,7 +21,8 @@ class ArticleController extends AbstractController
         
         //last article order by date
         $article = $articleRepository->findBy([], ['date' => "DESC"], 1);
-        //3 lasts projects 
+
+        //3 most important projects 
         $projets = $projetRepository->findBy([], ['id' => "DESC"], 3);
              
         return $this->render('article/index.html.twig', [
@@ -53,7 +54,7 @@ class ArticleController extends AbstractController
         $article =$articleRepository->find($id);
 
         if(is_null($article)){
-            throw $this->createNotFoundException('Article Not Found'); 
+            throw $this->createNotFoundException('Article non trouvé'); 
         }
         return $this->render('article/view.html.twig', [
             'article' => $article,

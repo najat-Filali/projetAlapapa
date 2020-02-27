@@ -23,8 +23,11 @@ security:
                 # where to redirect after logout
                 target: accueil
                 
- # only the first acces control that matches will be used
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]     
 
+ # only the first acces control that matches will be used
     access_control:
          - { path: ^/admin, roles: ROLE_ADMIN }
          - { path: ^/profile, roles: ROLE_USER }

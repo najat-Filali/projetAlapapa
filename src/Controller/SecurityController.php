@@ -15,6 +15,7 @@ class SecurityController extends AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
+           // if user is already logged in, don't display the login page again
          if ($this->getUser()) {
              return $this->redirectToRoute('message_new');
          }

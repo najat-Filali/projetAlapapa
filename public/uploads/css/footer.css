@@ -4,12 +4,24 @@ body{
   font-weight:300;
   background-color:white;
   color:rgb(105, 103, 103);
+ 
 }
-section{
+section:nth-child(1) {
+  padding-top: 100;
+}
+
+section .carousel {
   text-align:center;
+ 
 }
-input::placeholder {
-  color: aqua;
+
+section #partenaires .row{
+  opacity: 0.5;
+  display: block;
+}
+
+.form-control::placeholder {
+  color: rgb(182, 181, 181);
 }
 .footer #button{
 	width:35px;

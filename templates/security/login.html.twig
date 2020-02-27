@@ -3,6 +3,7 @@
 {% block title %}Se connecter{% endblock %}
 
 {% block body %}
+<section>
  <div class="container">
     <div class="col-sm-10">
         <form method="post">
@@ -28,16 +29,6 @@
                 value="{{ csrf_token('authenticate') }}"
             >
 
-            {#
-                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                See https://symfony.com/doc/current/security/remember_me.html
-
-                <div class="checkbox mb-3">
-                    <label>
-                        <input type="checkbox" name="_remember_me"> Remember me
-                    </label>
-                </div>
-            #}
             <br>
             <button class="btn btn-outline-info" type="submit">
                 Valider
@@ -47,4 +38,5 @@
         </form>
     </div>
 </div>
+</section>
 {% endblock %}

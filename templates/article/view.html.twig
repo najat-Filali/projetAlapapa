@@ -4,25 +4,27 @@
 
 {% block body %}
 
-{% if article.image %}
-  <img src="{{article.image}}" alt="article upload image"/>
-{% endif %}
+  <section id="articleView">
 
-  <div class="container">
-    <div>
+    <div class="container">  
+      <div >
+        <img src="{{ asset('images/articles/'~ article.image) }}" class="img-fluid"  alt="photo d'article" style="width:400px; height:400px;"/> 
+      </div>
 
-      <h1> {{article.titre | upper }}</h1>
-      <h6> Categorie : {{ article.categorie}}</h6>
-          <p>
-            Posté le 
-            {{article.date | date("d/m/Y h:i")}}
-          </p>
-          <br>
-          <img src="{{ asset('images/articles/'~ article.image) }}"/> 
-          <p> {{article.contenu}}</p>
-          <h6> par Hugo Gaspard</h> 
+      <div>
+        <h1> {{article.titre | upper | raw  }}</h1>
+        <h6> Categorie : {{ article.categorie | raw }}</h6>
+        <p>
+              Posté le 
+              {{article.date | date("d/m/Y h:i")}}
+        </p>
+            <br>
+        <p> {{article.contenu | raw }}</p>
+        <h6> par Hugo Gaspard</h> 
 
+      </div>
     </div>
-  </div>
+
+  </section>
 
 {% endblock %}

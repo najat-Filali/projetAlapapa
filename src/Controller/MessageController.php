@@ -36,12 +36,14 @@ class MessageController extends AbstractController
     {
         $message = new Message();
         $form = $this->createForm(MessageType::class, $message);
+        
+        //analyse de la requete
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // set date courante
+            // set current date
             $message->setDate(new \DateTime()); 
-            // set User
+            // set current User
             $message->setUser($this->getUser()); 
 
             $entityManager = $this->getDoctrine()->getManager();
